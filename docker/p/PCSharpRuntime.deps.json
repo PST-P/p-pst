@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "PCSharpRuntime/1.0.0": {
+        "dependencies": {
+          "PCheckerCore": "1.0.0"
+        },
+        "runtime": {
+          "PCSharpRuntime.dll": {}
+        }
+      },
+      "PCheckerCore/1.0.0": {
+        "runtime": {
+          "PCheckerCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PCSharpRuntime/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PCheckerCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

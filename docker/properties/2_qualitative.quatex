@@ -1,0 +1,20 @@
+BikeIsUsed(counter) =
+    if ( counter <= 0 || s.rval("steps") > 5000 ) then
+        1
+    else
+        if ( s.rval("alive.Bike.0") == 1.0 ) then
+            if ( s.rval("state.Bike.0.Moving") == 1.0 ) then
+                #BikeIsUsed(counter - 1)
+            else
+              if ( s.rval("state.Bike.0.Broken.dump") == 1.0 ) then
+                    0
+                else
+                    #BikeIsUsed(counter)
+                fi
+            fi
+        else
+            #BikeIsUsed(counter)
+        fi
+    fi;
+
+eval parametric(E[ BikeIsUsed(x) ], x, 0.0, 20.0, 400.0);

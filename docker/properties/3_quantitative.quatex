@@ -1,0 +1,20 @@
+PercentageBikeUsed(counter) =
+    if ( s.rval("steps") > 5000 ) then
+        counter / s.rval("steps")
+    else
+        if ( s.rval("alive.Bike.0") == 1.0 ) then
+            if ( ( s.rval("state.Bike.0.Moving") + s.rval("state.Bike.0.Halted") + s.rval("state.Bike.0.Parked") ) > 0 ) then
+                #PercentageBikeUsed(counter + 1)
+            else
+                if ( s.rval("state.Bike.0.Broken.dump") == 1.0 ) then
+                    counter / s.rval("steps")
+                else
+                    #PercentageBikeUsed(counter)
+                fi
+            fi
+        else
+            #PercentageBikeUsed(counter)
+        fi
+    fi;
+    
+eval E[ PercentageBikeUsed(0) ];
